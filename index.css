@@ -10,14 +10,31 @@ body{
 }
 
 header{
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.726);
   padding: 5%;
   color: wheat;
   text-align: center;
+  margin: 0;
 }
 
 header p{
   text-align: justify;
+}
+
+header h2{
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 5%;
+  background-color: rgba(136, 0, 0, 0.788);
+  border-radius: 7px;
+}
+
+header img{
+  width:200px;
+  height:200px;
+  border-radius:160px;
+  border:10px solid #666;
 }
 
 footer{
