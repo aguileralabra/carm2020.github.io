@@ -9,6 +9,23 @@ body{
     background-attachment: fixed;
 }
 
+header{
+  background-color: black;
+  padding: 5%;
+  color: wheat;
+  text-align: center;
+}
+
+header p{
+  text-align: justify;
+}
+
+footer{
+  background-color: black;
+  padding: 5%;
+  color: wheat;
+  text-align: center;
+}
 
 .timeline{
     --uiTimelineMainColor: var(--timelineMainColor, #222);
