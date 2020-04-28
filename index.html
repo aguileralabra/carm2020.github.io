@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,12 @@
     <link rel="stylesheet" href="music.css">
     <link rel="icon" href="imagenes/torresdelpaine.jpg">
 </head>
+
 <body>
+  
+  <main>
+
+  </main>
     <header>
       <h1>Te amo Catalina</h1>
       <img src="imagenes/xxx.jpg" alt="Logotipo de HTML5" width="400" height="453">
@@ -425,12 +431,45 @@
       </div>
         
 <footer>
-  <embed src="music/sipo.mp3" autostart=true true loop=true width="263" height="186"> 
+    <audio src="" controls id="audioPlayer"></audio>
+    <ul id="playlist">
+      <li class="current-song"><a href="music/sipo.mp3">Si po - Diego Lorenzini</a></li>
+      <li class="current-song"><a href="music/Hacer un puente-letra MusicaOFFICIALVEVO.mp3">Hacer un puenta - Franelas</a></li>
+      <li class="current-song"><a href="music/Gepe - Un Día Ayer (videoclip oficial).mp3">Gepe - Un dia ayer</a></li>
+      <li class="current-song"><a href="music/Gepe - Cine en tu cama (audio oficial).mp3">Gepe - Cine en tu cama</a></li>
+      <li class="current-song"><a href="music/Gepe - Las flores (audio oficial).mp3">Gepe - las flores</a></li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script>
+      audioPlayer();
+      function audioPlayer(){
+        var currentSong = 0;
+        $("#audioPlayer")[0].src = $("#playlist li a")[0];
+        $("#audioPlayer")[0].play();
+        $("#playlist li a").click(function(e){
+          e.preventDefault();
+          $("#audioPlayer")[0].src = this;
+          $("#audioPlayer")[0].play();
+          $("#playlist li").removeClass("current-song");
+            currentSong =$(this).parent().index();
+            $(this).parent().addClass("current-song");
+        });
+
+        $("#audioPlayer")[0].addEventListener("ended", function(){
+            currentSong++;
+            if(currentSong == $("#playlist li a").length)
+                currentSong = 0;
+            $("#playlist li").removeClass("current-song");
+            $("#playlist li:eq("+currentSong+")").addClass("current-song");
+            $("#audioPlayer")[0].src = $("#playlist li a")[currentSong].href;
+            $("#audioPlayer")[0].play();
+        });
+      }
+    </script> 
 </footer>
       
 
       <script type="text/javascript" src="index.js"></script>
-      <script type="text/javascript" src="music.js"></script>
 
 </body>
 </html>
