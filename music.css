@@ -8,14 +8,23 @@ main{
 
 #playlist{
     list-style: none;
-    background-color: rgba(109, 106, 106, 0.767);
+    background-color: rgba(26, 25, 25, 0.767);
     border-radius: 6px;
     text-align: center;
+    padding: 4%;
 }
 
 #playlist li a{
     color: wheat;
     text-decoration: none;
+}
+
+#playlist li { 
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    border-radius: 5px;
 }
 
 #playlist .current-song a{
